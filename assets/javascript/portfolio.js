@@ -193,13 +193,7 @@
                 },
             });
         }, 1250);
-
-        setTimeout(function() {
-            if (!app.shouldIgnoreVideo) {
-                app.videoElement.play();
-                app.audioElement.play();
-            }
-
+        
             app.videoElement.addEventListener(
                 "timeupdate",
                 function() {
