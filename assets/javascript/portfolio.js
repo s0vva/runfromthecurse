@@ -1,5 +1,12 @@
 "use strict";
 
+function startMediaPlayback() {
+    if (!app.shouldIgnoreVideo) {
+        app.videoElement.play();
+        app.audioElement.play();
+    }
+}
+
 (function() {
     var timeouts = [];
 
@@ -36,8 +43,6 @@
                 name: "tossex",
                 link: ""
             },
-            
-
         ];
 
         for (var i in links) {
@@ -61,7 +66,7 @@
             );
 
             $("#background").replaceWith(
-                '<div id="background" style="background-image: url(https://tims.city/mobile-background.jpg);"></div>'
+                '<div id="background" style="background-image:url(https://tims.city/mobile-background.jpg);"></div>'
             );
 
             $("#audio").remove();
@@ -69,7 +74,6 @@
             app.shouldIgnoreVideo = true;
         } else {
             app.titleChanger();
-        
         }
     });
 
@@ -193,7 +197,10 @@
                 },
             });
         }, 1250);
-        
+
+        setTimeout(function() {
+            startMediaPlayback();
+
             app.videoElement.addEventListener(
                 "timeupdate",
                 function() {
@@ -232,5 +239,7 @@ document.addEventListener("DOMContentLoaded", function() {
         gyatOverlay.style.display = 'none';
         content.style.display = 'block';
         console.log('GYAT $$');
+        startMediaPlayback();
     });
 });
+
