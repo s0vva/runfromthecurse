@@ -1,3 +1,9 @@
+@font-face {
+    font-family: demon;
+    src:url("./others/whoaskssatan.ttf")
+}
+
+
 [class~="background"],
 [class~="marquee-container"],
 #background,
@@ -445,7 +451,7 @@ pre {
 
 #hurt {
     color: #ffffff;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: demon;
 }
 
 #gyat-overlay {
